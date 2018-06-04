@@ -51,6 +51,22 @@ namespace ConsoleApp_OrderBy_ThenBy
                 Console.WriteLine($"name: {q.name} value: {q.value}");
             }
 
+            //continuous sorting.
+            var sortedByNameAndValues = nameValues.OrderBy(c => c.name).OrderBy(c => c.value);
+            var sortedByValueAndNames = nameValues.OrderBy(c => c.value).OrderBy(c => c.name);
+
+            Console.WriteLine("== OrderBy() + OrderBy() demo: sortedByNameAndValues ==");
+            foreach (var q in sortedByNameValues)
+            {
+                Console.WriteLine($"name: {q.name} value: {q.value}");
+            }
+
+            Console.WriteLine("== OrderBy() + OrderBy() demo: sortedByValueAndNames ==");
+            foreach (var q in sortedByValueNames)
+            {
+                Console.WriteLine($"name: {q.name} value: {q.value}");
+            }
+
             Console.Read();
         }
     }
